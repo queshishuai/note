@@ -1,2 +1,1 @@
-# cp
-Compiler Principle
+# Compiler Principle
