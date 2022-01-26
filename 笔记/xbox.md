@@ -12,9 +12,14 @@
 - kiki wolfkill  
 - 《open the Xbox》  
 - TED kummert：Windows CE  
+- Rick
 - 《帝国时代》  
 - 《超时空之刃》  
 - Next Gen Magazine  
+- 拉斯维加斯电子消费展览
+- E3  
+- Bungie
+- Halo  
 - 
 
 
@@ -22,4 +27,5 @@
 
 - 工作四维发散   
 - 马克笔和纸  
+- 人们微软的刻板印象  
 - 
