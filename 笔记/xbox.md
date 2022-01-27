@@ -20,8 +20,8 @@
 - E3  
 - Bungie
 - Halo  
-- 
-
+- ROD frrgusson；EPIC
+- Don Mattrick  
 
 
 
