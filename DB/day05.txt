@@ -1,0 +1,235 @@
+回顾：
+显示：QLabel、QFrame、QMessageBox
+输入：QLineEdit
+按钮：QPushButton QDialogButtonBox
+事件：
+   void paintEvent(QPaintEvent*);
+   void timerEvent(QTimerEvent*);
+   void mousePressEvent(QMouseEvent*);
+   void mouseReleaseEvent(QMouseEvent*);
+   void mouseMoveEvent(QMouseEvent*);
+   void keyPressEvent(QKeyEvent*);
+   void keyReleaseEvent(QKeyEvent*);
+其它：QDir、QRect、QTime、QDoubleValidator
+      QVector、QPair、foreach
+
+==========================
+今天 
+一 QT数据库(Sqlite)
+1 数据库简介
+1）定义
+   数据库是指以一定方式存储在一起，能为多个用户共享，具有尽可能小的冗余的特点，是与应用程序彼此独立的数据集合。
+
+2）和数据库相关的术语
+DB 	数据库
+DBMS	数据库管理系统
+DBA	数据库管理员
+RDB	关系型数据库
+RDBMS   关系型数据库管理系统
+
+3）数据库分类
+层次式数据库
+网络式数据库
+关系型数据库(普通使用) 
+
+4）常见数据库
+甲骨文:Oracle,50%
+IBM：DB2，20%
+微软：sqlServer,15%
+Sun公司的Mysql（属于Oracle）
+开源的SQLite，轻量级的嵌入式关系型数据库
+......
+
+5）数据库操作语言(SQL)
+
+2 Sqlite数据库
+2.1  ubuntu安装Sqlite3
+在线安装：sudo apt-get install sqlite3
+离线安装：
+//ubuntu12.04 64位
+dpkg -i sqlite3_3.7.9-2ubuntu1.2_amd64.deb 
+
+//ubuntu12.04 32位
+dpkg -i sqlite3_3.7.9-2ubuntu1_i386.deb
+
+
+2)测试，在终端输入"sqlite3",进入sqlite命令行界面
+SQLite version 3.7.9 2011-11-01 00:52:41
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> //可以输入sqlite自身指令，以"."开头
+sqlite> .help 	//查看sqlite自身指令帮助信息
+sqlite> .exit/.quit  //退出
+sqlite> Ctrl+L	     //清屏 
+
+sqlite> //可以输入sql语句，以";"结束
+
+3 sqlite常用的指令（了解）
+//拷贝testDB.db到ubuntu
+在终端输入:sqlite3 testDB.db,进入sqlite命令行界面
+1）.database  查看当前数据库信息
+2）.table     查看数据表的名字
+3）.schema    查看数据表的创建的信息
+4）查看表中数据的sql语句
+   select * from company;
+5）.separator "分隔符"   设置分隔符(.mode list有效)
+6）.header on/off        显示/关闭表头
+7）.mode list/column     设置模式
+8）.width num1 num2 ..   设置每个字段的域宽
+9）.show 		 查询当前设置的值
+10）.nullvalue "string"	 设置空白字段显示的字符串  
+11）.read sqlfile        执行sqlfile文件中的语句
+
+4 使用SQL语句操作数据库
+1）创建数据表
+语法：
+CREATE TABLE table_name(
+   column1  datatype [约束],
+   column2  datatype [约束],
+   column3  datatype [约束],
+   ...
+   column4  datatype [约束]
+);
+datatype(字段类型)：
+   -->INT  整形数
+   -->TEXT 文本字符串
+   -->REAL 浮点数
+注：表示字符串用  ''或""
+ 
+约束：
+  -->PRIMARY KEY 主键约束，列字段值唯一，可以加快数据访问。
+  -->NOT NULL  非空约束，列字段值不能为空
+  -->UNIQUE    唯一约束，列字段值唯一
+
+2）删除数据表
+语法：
+  DROP TABLE  table_name;
+  注：删除数据表以后数据也将一起被删除
+
+3）插入数据
+语法：
+  INSERT INTO table_name
+	(column1,column2,column3,...)
+	     VALUES(value1,value2,value3,...)
+eg:
+sqlite> INSERT INTO company
+   ...> (id,age,name,address,salary)
+   ...> VALUES(10018,30,"武松","阳谷县",800.5);
+
+sqlite> INSERT INTO company
+   ...> (id,age,name,salary)
+   ...> VALUES(10019,36,"宋江",700.5);
+
+4）删除数据
+语法：
+   DELETE FROM table_name WHERE [condition];
+eg：
+   //删除工资在1200--1300之间的所有数据
+   DELETE FROM company WHERE salary>=1200 and salary <=1300;
+
+5）查询语句
+语法：
+    SELECT column1,column2,... FROM table_name;
+    SELECT column1,column2,... 
+		FROM table_name WHERE [condition];
+    SELECT column1,column2,... 
+	  FROM table_name WHERE [condition]
+		ORDER BY column  ASC|DESC;
+    注：ASC升序，DESC降序    
+
+eg:
+    SELECT * FROM company;　
+    SELECT name,salary FROM　company;
+       
+6）修改数据
+   UPDATE table_name 
+	SET column1=value1,column2=value,..
+		WHERE　[contiditon];
+
+eg:将age在30到35的数据，salary加1000
+   UPDATE company SET salary=salary+1000 
+   	WHERE age>=30 and age<=35;
+
+练习：
+1)创建一个"menu.db"的数据库文件，
+  建立学生成绩表(student)
+  列的字段依次为 学号(ID),姓名(Name),成绩(Score)   
+ 
+  要求，学号唯一不能为空,姓名和成绩也不能为空
+
+2）插入以下数据
+   id   name     score
+ 10011  杨键     80.5
+ 10012  王建立   81.5
+ 10015  闵卫     88
+ 10013  jianggl  88.5
+ 10016  游成伟   90
+ 10014  张继文   70.5
+ 10018  冯华     60.5
+ 10019  小马     99
+ 10020  老马     98
+ .......
+3）删除小马这条数据
+4）修改
+   老马--》马志国
+   jianggl --》蒋贵良
+   id = 10013成绩改为89
+5）排序查询并显示
+
+
+5 数据库备份和恢复
+.output filename //将查询结果导出到指定文本
+.backup filename.backup //备份当前数据库
+.restore filename.backup //恢复当前的数据库
+
+6 在QT中使用数据库：
+QSqlDataBase：建立QT程序和数据的连接
+    //建立sqlite3与数据库连接
+    QSqlDatabase db = 
+	QSqlDatabase::addDatabase("QSQLITE");
+    //设置数据文件名字
+    db.setDatabaseName("menu.db");
+    //打开数据库
+    bool ok = db.open();
+
+
+QSqlQuery/QSqlQueryModel:执行SQL语句，遍历查询结果
+执行sql语句：
+QSqlQuery query;
+QString str("sql语句")
+query.exec(str);//执行sql语句 
+
+
+《案例》学生成绩管理系统
+工程名：SqliteQt
+类名：SqliteDialog
+
+需求：
+插入操作：获取用户输入“学号”“姓名”“成绩”，拼接插入的sql语句，使用QSqlQuery
+
+删除操作：根据ID删除一条数据
+
+修改操作：根据ID修改成绩
+
+查询操作：每次执行sql语句，自动查询和显示
+QSqlQueryModel model；
+mode.setQuery("sql语句");
+ui->tableView->setModel(&model)
+
+排序查询：获取排序关键字(id/score)和排序条件(升序/降序)，构造查询并排序的sql语句，执行
+QSqlQueryModel model；
+mode.setQuery("排序sql语句");
+ui->tableView->setModel(&model)；
+
+
+
+
+
+
+
+
+
+
+
+
+
