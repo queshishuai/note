@@ -469,3 +469,12 @@ assign data_out = (CS_b == 0) ? (WE_b == 0)?data_in：data_out:1'bz;
 - 状态控制器：FSM，取指令、以码、执行  
 - UART  
 - 
+
+### 第八章 可编程逻辑器件和存储器件  
+---  
+
+- ROM、PLA、PAL、CPLD、FPGA、MPGA  
+- 存储器件  
+- ROM，2^n×m的2^n个字节，n个输入线，地址线、地址译码器（输出，字线）；m个输出线，位线  
+- 工艺：双极型、互补型金属氧化物半导体CMOS，n沟道MOS、P沟道MOS。  
+- 
