@@ -476,5 +476,9 @@ assign data_out = (CS_b == 0) ? (WE_b == 0)?data_in：data_out:1'bz;
 - ROM、PLA、PAL、CPLD、FPGA、MPGA  
 - 存储器件  
 - ROM，2^n×m的2^n个字节，n个输入线，地址线、地址译码器（输出，字线）；m个输出线，位线  
+- n1个地址线，n2位输出，则有2^n1xn2个存储单元  
 - 工艺：双极型、互补型金属氧化物半导体CMOS，n沟道MOS、P沟道MOS。  
+- PROM，一次编程，双极工艺，不可擦除，10-30v电压熔断，  
+- EPROM，浮删nMOS，UV擦除和电擦除；
+- ROM用于组合逻辑真值表的应用  
 - 
