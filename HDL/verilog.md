@@ -532,3 +532,9 @@ assign data_out = (CS_b == 0) ? (WE_b == 0)?data_in：data_out:1'bz;
 	- 外设：中断控制器、UART、通信协议内核  
 - 快速建立原型：prototype machine  
 - 
+
+### 第九章 数字处理器的结构和算法  
+---  
+
+- NRE一次性工程  
+- 
