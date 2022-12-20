@@ -6,4 +6,8 @@
 - 链接：找到符号和函数在哪，然后链接在一起  
 - Ctrl + F7 单独编译  
 - 错误C1231、LNK1561  
+- bool，1个字节，0是false；非0是true  
+- 常数折叠，编译阶段？  
+- vs file filter  
+- 
 - end
