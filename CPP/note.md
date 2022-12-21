@@ -9,5 +9,11 @@
 - bool，1个字节，0是false；非0是true  
 - 常数折叠，编译阶段？  
 - vs file filter  
+- static外部和内部  
+- V表，包含基类所有虚函数的映射    
+- 继承  
+- 虚函数：动态联编Dynamic Dispatch  
+- 额外的性能损失：1、有一个指针指向V表，2、遍历V表决定使用哪个重载版本    
+- 纯虚函数  
 - 
 - end
