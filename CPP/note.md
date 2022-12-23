@@ -26,5 +26,15 @@
   - const char* examp = R"()";  
   - 只读  
   - 
+- const 
+  - 类中方法：void get()const{},表示不能修改实际的类成员，const对象才能使用const函数   
+- mutable，可以临时让常变量被改变  
+  - 与const配合用  
+  - lamba？？？//TODO  
+- 构造函数成员初始化列表A():m_name("123"),m_score(0){}  
+  -  顺序不能乱，会有依赖问题  
+  -  风格问题，把初始化成员放在列表里，其他逻辑写在函数体中  
+  -  防止创建2个对象，去覆盖  
+- ternary 三元运算符  
 - 
 - end
