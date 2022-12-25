@@ -49,6 +49,14 @@
 - 运算符及其重载  
 - this指针  
 - 智能指针  
-  - UNIQUE_ptr:作用域指针<memory>   
-  - 
+  - unique_ptr:作用域指针<memory>   
+  - shared_ptr： std::unique_ptr<A> a = std::make_unique<A>();  
+  - weak_ptr  
+- 拷贝构造函数。  
+- vector
+  - 迭代器  
+  - push_back  
+  - clear  
+  - earse  
+  
 - end
