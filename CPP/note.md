@@ -58,5 +58,9 @@
   - push_back  
   - clear  
   - earse  
-  
+  - reserve(3)
+  - emplace_back()只传递参数列表
+- 库  
+  - 包管理  
+  - 静态链接
 - end
