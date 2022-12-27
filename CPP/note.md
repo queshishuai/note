@@ -62,5 +62,20 @@
   - emplace_back()只传递参数列表
 - 库  
   - 包管理  
-  - 静态链接
+  - 静态链接  
+- 多返回值，
+  - tuple：多个变量，不关心类型，<functional>,make_pair();不用传递类型get<0>()  
+  - pair,A.first;A.second;  
+  - 结构体  
+- 模板  
+  - typename，or class
+  - 调用时才被创建  
+  - 模板参数可以指定类型，也可以指定变量大小  
+  - meta programing  
+- stack和heap  
+  - stack：2M，分配内存快，移动栈帧，catch line  
+  - heap：空闲list  
+- 宏  
+  - 必须是同一行，用\  
+  
 - end
