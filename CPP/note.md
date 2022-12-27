@@ -76,6 +76,8 @@
   - stack：2M，分配内存快，移动栈帧，catch line  
   - heap：空闲list  
 - 宏  
-  - 必须是同一行，用\  
-  
+  - 必须是同一行，在每一行尾巴用\  
+- auto：迭代器用  
+- 静态数组std::array,size是一个模板参数    
+
 - end
