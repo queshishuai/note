@@ -80,5 +80,13 @@
 - auto：迭代器用  
 - 静态数组std::array,size是一个模板参数    
 - 函数指针  
+- lambda,匿名函数  
+  - [= & a](int value){TODO}  
+  - std::function  
+  - std::find_if()  
+- thread  
+- chrono计时器  
+- sort用lamdba  
+- 类型双关  
 
 - end
