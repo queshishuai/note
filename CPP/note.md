@@ -88,5 +88,7 @@
 - chrono计时器  
 - sort用lamdba  
 - 类型双关  
-
+- 虚析构函数：意义是先调用子类析构，再调用基类虚构  
+    - 你希望有人继承你的基类，必须显示指定虚析构函数，安全扩展类  
+- 类型转换：static_cast、reinterpret_cast（重新解释内存）\const_cast（移除const）\dynamic_cast(运行时检查)
 - end
