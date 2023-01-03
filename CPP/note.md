@@ -90,5 +90,8 @@
 - 类型双关  
 - 虚析构函数：意义是先调用子类析构，再调用基类虚构  
     - 你希望有人继承你的基类，必须显示指定虚析构函数，安全扩展类  
-- 类型转换：static_cast、reinterpret_cast（重新解释内存）\const_cast（移除const）\dynamic_cast(运行时检查)
+- 类型转换：static_cast、reinterpret_cast（重新解释内存）\const_cast（移除const）\dynamic_cast(运行时检查)  
+- 条件与操作action断点  
+- 安全性，严肃项目使用智能指针  
+  
 - end
