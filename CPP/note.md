@@ -93,5 +93,7 @@
 - 类型转换：static_cast、reinterpret_cast（重新解释内存）\const_cast（移除const）\dynamic_cast(运行时检查)  
 - 条件与操作action断点  
 - 安全性，严肃项目使用智能指针  
+- 预编译头文件  
+  - g++ -std=c++11 pch.h  
   
 - end
