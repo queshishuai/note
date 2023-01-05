@@ -65,8 +65,10 @@
   - 静态链接  
 - 多返回值，
   - tuple：多个变量，不关心类型，<functional>,make_pair();不用传递类型get<0>()  
-  - pair,A.first;A.second;  
+  - pair,A.first;A.second;
+  - tie
   - 结构体  
+  - 结构化绑定auto[name,age] = A(); std=c++17
 - 模板  
   - typename，or class
   - 调用时才被创建  
@@ -91,9 +93,16 @@
 - 虚析构函数：意义是先调用子类析构，再调用基类虚构  
     - 你希望有人继承你的基类，必须显示指定虚析构函数，安全扩展类  
 - 类型转换：static_cast、reinterpret_cast（重新解释内存）\const_cast（移除const）\dynamic_cast(运行时检查)  
+  - dynamic_cast用来验证，RTTI，type info多态类型
 - 条件与操作action断点  
 - 安全性，严肃项目使用智能指针  
 - 预编译头文件  
   - g++ -std=c++11 pch.h  
+- std::optional 
   
+---
+### 多线程  
+- std::asnyc
+- 数据流化
+- std::async(std::launch::async,func);  
 - end
