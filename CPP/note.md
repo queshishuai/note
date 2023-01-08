@@ -108,5 +108,7 @@
 - std::async(std::launch::async,func);  
   
 - string_view 
-- chrome://tracing
+- chrome://tracing  
+- 单例，singleton  
+
 - end
