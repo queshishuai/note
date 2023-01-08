@@ -88,6 +88,7 @@
   - std::find_if()  
 - thread  
 - chrono计时器  
+  auto start = std::chrono::time_point_cast<std::chrono::microseconds>(m_startTimePoint).time_since_epoch().count();
 - sort用lamdba  
 - 类型双关  
 - 虚析构函数：意义是先调用子类析构，再调用基类虚构  
