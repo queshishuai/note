@@ -112,7 +112,9 @@
 - 单例，singleton  
 - sso优化  
 - 内存tracing，重写new和delete    
-- Lvalue
+- Lvalue，located value  
+  - 常量引用(右值引用)：void func([const] std::string&& str),检测常量，优化，不用考虑拷贝之类
 - Rvalue  
+  - 临时值
 - move
 - end
