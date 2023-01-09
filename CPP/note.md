@@ -110,5 +110,9 @@
 - string_view 
 - chrome://tracing  
 - 单例，singleton  
-
+- sso优化  
+- 内存tracing，重写new和delete    
+- Lvalue
+- Rvalue  
+- move
 - end
