@@ -116,5 +116,9 @@
   - 常量引用(右值引用)：void func([const] std::string&& str),检测常量，优化，不用考虑拷贝之类
 - Rvalue  
   - 临时值
-- move
+- move  
+  - A(string&& name)：m_name((string&&)name){}
+  - A(string&& name)：m_name(std::move(name)){}
+- RVO  
+  
 - end
