@@ -119,6 +119,8 @@
 - move  
   - A(string&& name)：m_name((string&&)name){}
   - A(string&& name)：m_name(std::move(name)){}
+  - 拷贝构造的临时变量也会析构  
 - RVO  
-  
+- C++三法则：  
+- C++五法则：
 - end
