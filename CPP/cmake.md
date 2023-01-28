@@ -4,7 +4,9 @@
 - CMakeList.txt  
   - cmake_minimum_required(VERSION 3.10)  
   - project(pname)  
+  - SET(CMAKE_C_COMPILER "C:\\MinGW\\bin\\gcc.exe")
+  - SET(CMAKE_CXX_COMPILER "C:\\MinGW\\bin\\g++.exe")
   - add_executable(pname *.cpp)  
-- code Makefile  
+- cmake -G "MinGW Makefiles"  
 - make  
 - 
