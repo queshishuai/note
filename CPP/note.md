@@ -162,8 +162,8 @@ int print(T t,Args... args)
   -forward,perfect forwarding,完美转发  
     - 不管是T&&、左值引用、右值引用，std::forward都会按照原来的类型完美转发。
     - forward主要解决引用函数参数为右值时，传进来之后有了变量名就变成了左值。
-    ```
-    template <typename T>
+```
+template <typename T>
 void func_f(T& t)
 {
 
@@ -181,5 +181,5 @@ void test_f(T&& nValue)
     func_f(nValue);
     func_f(std::forward<T>(nValue));
 }
-    ```
+```
 - end
