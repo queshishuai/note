@@ -136,5 +136,28 @@
     2 编译器运行响应的构造函数，构造对象，并传入初始值  
     3 返回改对象的指针。对象已经被分配了空间并构造完成。
   - 限制只能建立在堆上：在栈上分配内存，编译器分配空间，调用构造函数来构造栈对象。会先检查所有非静态函数的访问性。私有的不会分配。  
-  - 限制建立在栈上，限制new的调用，把operator new重载为私有。
+  - 限制建立在栈上，限制new的调用，把operator new重载为私有。  
+--- 
+  -可变参数 
+```  
+  template<typename T,typename... Types>
+  void func(T n,Types... args)
+  {
+  va_list ap;
+  va_start(ap,n);
+  va_arg(ap,int);
+  va_end(ap);
+  }
+```
+  -可变参数模板
+ ```
+template <typename T,class... Args>
+int print(T t,Args... args)
+{
+    printf(args...);
+}
+```
+--- 
+  -move  
+  -forward  
 - end
