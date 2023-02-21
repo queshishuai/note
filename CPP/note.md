@@ -180,6 +180,8 @@ void test_f(T&& nValue)
 {
     func_f(nValue);
     func_f(std::forward<T>(nValue));
+    func_f(std::move(nValue));
 }
+func_f(forward<int>(nValue));//Rvalue
 ```
 - end
