@@ -184,4 +184,10 @@ void test_f(T&& nValue)
 }
 func_f(forward<int>(nValue));//Rvalue
 ```
+
+---
+- 函数对象  
+  - 重载函数调用操作符的类，行为类似函数的对象，叫仿函数。  
+  - 其实就是重载了(),使得类可以像函数一样调用。  
+  `std::hash<float>{}(5.0)`
 - end
