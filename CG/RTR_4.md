@@ -28,15 +28,38 @@ GPU 渲染管线和硬件架构浅谈
 	  1. 处理所有顶点，生成一个tile list的中间数据，保存每个图元属于哪个tile  
 	  2. 针对每个tile，执行像素处理。
 	- TBDR  
-- SRAM，速度快，片内存储L1，L2 catch，4M,12M，26-37M
-> L1/L2 缓存是片上缓存，速度很快，但是通常比较小。比如 L1 cache 通常在 32KB~256KB 这个级别。而 L3 cache 可以达到 8MB\~32MB 这个级别。像苹果的 M1 芯片（CPU 和 GPU 等单元在一个硬件上，SoC），L3 缓存是给所有硬件单元使用的，所以也被称为 System Level Cache。
-> L1 缓存分为指令缓存（I-Cache）和数据缓存（D-Cache），CPU 针对指令和数据有不同的缓存策略。
-L1 缓存不可能设计的很大。因为增大 L1 缓存虽然会减少 L1 cache missing，但是会增加访问的时钟周期，也就是说降低了 L1 cache 的性能。
-CPU 的 L1/L2 缓存需要处理缓存一致性问题。即不同核心之间的 L1 缓存之间的数据应该是一致的。当一个核心的 L1 中的数据发生变化，其他核心的 L1 中的相应数据需要标记无效。而 GPU 的缓存不需要处理这个问题。
-> CPU 查找数据的时候按照 L1-->L2-->L3-->DRAM 的顺序进行。当数据不在缓存中时，需要从主存中加载，就会有很大的延迟。
-- DRAM，DDR  
-- GDDR，显存ddr    
-- LPDDR  
-- UFS  
-- 
--  ext  
+- 内存
+	- SRAM，速度快，片内存储L1，L2 catch，4M,12M，26-37M
+	> L1/L2 缓存是片上缓存，速度很快，但是通常比较小。比如 L1 cache 通常在 32KB~256KB 这个级别。而 L3 cache 可以达到 8MB\~32MB 这个级别。像苹果的 M1 芯片（CPU 和 GPU 等单元在一个硬件上，SoC），L3 缓存是给所有硬件单元使用的，所以也被称为 System Level Cache。
+	> L1 缓存分为指令缓存（I-Cache）和数据缓存（D-Cache），CPU 针对指令和数据有不同的缓存策略。
+	> L1 缓存不可能设计的很大。因为增大 L1 缓存虽然会减少 L1 cache missing，但是会增加访问的时钟周期，也就是说降低了 L1 cache 的性能。
+	> CPU 的 L1/L2 缓存需要处理缓存一致性问题。即不同核心之间的 L1 缓存之间的数据应该是一致的。当一个核心的 L1 中的数据发生变化，其他核心的 L1 中的相应数据需要标记无效。而 GPU 的缓存不需要处理这个问题。
+	> CPU 查找数据的时候按照 L1-->L2-->L3-->DRAM 的顺序进行。当数据不在缓存中时，需要从主存中加载，就会有很大的延迟。
+	> CPU 是通过大容量高速缓存，**分支预测**，乱序执行（Out-of-Order）等手段来遮掩延迟  
+	> GPU靠warp
+	- DRAM，DDR  
+	- GDDR，显存ddr    
+	- LPDDR  
+	- UFS  
+- 超标量设计，super scalar  
+- 乱序执行 
+- 超线程  
+	> Intel CPU 也有使用 GPU 的思路，准备两套寄存器，CPU 核心在两个线程之间切换的成本就非常低。这样一个核心就可以当做两个核心来使用。这就是超线程技术。不过 CPU 毕竟不像 GPU 有大量寄存器，核心在两个线程之间切换，并不一定能够保证降低延迟，同时不能准确控制每个线程的执行时间。所以很多游戏以及高性能计算程序都是关闭超线程的。
+- 2.3 GPU渲染过程  
+- warp，线约束，32个线程，GPU计算核心最小的工作单元。SIMD/SIMT    
+- SM，streaming Multiprocessor 负责处理顶点着色器  
+- 光栅化引擎 SOP   
+- 片元，生成像素线程。  
+- Catch line  GPU和缓存之间交换数据
+- > Cache line 不仅仅是为了字节对齐128字节。也有现实意义。想要知道是否缓存命中，是否写入主存，肯定要有标记位。所以一个 Cache line 就是标记位+地址偏移+实际数据。
+- DLP，data level parallelism  
+- TLP  
+- ILP  
+- Latency hiding  
+- warp Divergence 条件分钟，两个都走一遍，mask掉不要的。  
+- pixel quad 2x2像素  
+- depth test stencil test ROP  
+- EarlyZS  
+- FIFO 保序  
+- >mesa（开源的 opengl 实现。包含 freedreno，一个开源的 adreno 驱动。如果对驱动实现细节感兴趣，比如 early-z、lrz 的实现原理，强烈推荐阅读，这个是网上少有的代码级别的资料）
+- ext  
