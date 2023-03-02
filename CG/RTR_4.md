@@ -62,4 +62,33 @@ GPU 渲染管线和硬件架构浅谈
 - EarlyZS  
 - FIFO 保序  
 - >mesa（开源的 opengl 实现。包含 freedreno，一个开源的 adreno 驱动。如果对驱动实现细节感兴趣，比如 early-z、lrz 的实现原理，强烈推荐阅读，这个是网上少有的代码级别的资料）
-- ext  
+- 
+---
+- shader model
+- 定点着色器：模型空间->齐次裁剪空间  
+- geometry shader：输出点、折线、三角形  
+- stream output  
+- pixel shader：处理场景光照和与之相关的效果，凹凸纹理映射和调色。  
+- z-buffer  
+- gamma correction：对光线或三色值进行非线性运算。利用人眼对光线或黑白的感知。  
+- 
+
+------
+
+### texturing  
+
+- 使用图像、函数改变物体表面外观的计数  
+- 纹理压缩，DXTC  
+- 
+
+------
+
+### Deferred Shading  
+
+- co-issue，把不同长度的指令拼接，填充，发挥SIMD又是
+
+- Unified Shader Arch：VS和PS任务不均衡  
+- MMIO，memory mapped io  
+- 双缓冲，画面撕裂，V-sync  
+- LOD  
+ext  
