@@ -19,4 +19,10 @@ glBindBuffer(GL_ARRAY_BUFFER,buffer);
 glBufferData(GL_ARRAY_BUFFER,6*sizeof(float), position,GL_STATIC_DRAW);
 glDrawArrays(GL_TRIANGLES,0,3);
 ```
+- vertex is more than a position  
+- layout  
+```
+glEnableVertexAttribArray(0);
+glVertexAttribPointer(0,2, GL_FLOAT,false,2*sizeof(float),(const void*)0);
+```
 - 
