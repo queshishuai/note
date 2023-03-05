@@ -25,4 +25,4 @@ glDrawArrays(GL_TRIANGLES,0,3);
 glEnableVertexAttribArray(0);
 glVertexAttribPointer(0,2, GL_FLOAT,false,2*sizeof(float),(const void*)0);
 ```
-- 
+- default shader,depends on GPU driver
