@@ -26,3 +26,24 @@ glEnableVertexAttribArray(0);
 glVertexAttribPointer(0,2, GL_FLOAT,false,2*sizeof(float),(const void*)0);
 ```
 - default shader,depends on GPU driver
+
+```
+//编译
+GLuint id = glCreateShader(type);
+glShaderSource(id,1,&src,NULL);
+glCompileShader(id);
+//连接    
+GLuint vs = CompilerShader(GL_VERTEX_SHADER,vertexShader);
+GLuint fs = CompilerShader(GL_FRAGMENT_SHADER,fragmentShader);
+GLuint program = glCreateProgram();
+glAttachShader(program,vs);
+glAttachShader(program, fs);
+glLinkProgram(program);
+//glValidateProgram(program);  
+
+//install
+GLint shader = CreatShader(vs,fs);
+glUseProgram(shader);
+```
+    
+    
