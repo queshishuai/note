@@ -64,3 +64,32 @@ uniform b{
 	bool v2;
 }name;
 ```
+- uniform buffer object  
+- 访问`glMapBuffer`  
+- 布局：`layout(packed,column_major) uniform`  
+2.5 spir-V  
+- 严格，语法表达规范  
+- 调度和寄存器分配算法  
+
+### Chapter 3 绘制  
+---
+- 图元：点、线、三角形  
+- 点，四边形区域模拟`gl_PointSize`  
+- 点精灵，渲染点,片元`gl_PointCoord`  
+- line loop   
+- line strip  
+- diamond exit规则`glLineWidth()`  
+- 多边形,正面，反面`glPolygonMode`   
+3.2 缓存数据  
+- 对象`glCreatBuffers()`  
+- 分配内存`glNamedBufferStorage()`  
+- 绑定`glBindBuffer()`  
+- 免拷贝`glMapBuffer()\glUnmapNamedBuffer()`  
+- `glMapNamedBufferRange`  
+- 丢弃缓存数据`glInvalidateBufferData()`  
+3.3 draw  
+- 索引`glDrawElements()`  
+- 非索引`glDrawArrays()`  
+
+### Chapter 4 
+---
