@@ -81,4 +81,6 @@ ShaderSource ParseShader(const std::string& filePath)
     return { ss[0].str(),ss[1].str() };
 }
 ```
-    
+   
+- index buffer  
+- 
