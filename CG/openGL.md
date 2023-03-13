@@ -45,5 +45,40 @@ glLinkProgram(program);
 GLint shader = CreatShader(vs,fs);
 glUseProgram(shader);
 ```
-    
+
+```
+enum ShaderType
+{
+    invalid = -1,
+    vertex,
+    fragment
+};
+struct ShaderSource
+{
+    std::string vertexSource;
+    std::string fragmentSource;
+};
+ShaderSource ParseShader(const std::string& filePath)
+{
+    std::fstream stream(filePath);
+    std::string line;
+    int type = ShaderType::invalid;
+    std::stringstream ss[2];
+    while (getline(stream,line))
+    {
+        if (line.find("#shader") != std::string::npos)
+        {
+            if (line.find("vertex") != std::string::npos)
+                type = ShaderType::vertex;
+            else if (line.find("#shader") != std::string::npos)
+                type = ShaderType::fragment;
+        }
+        else
+        {
+            ss[(int)type] << line << "\n";
+        }
+    }
+    return { ss[0].str(),ss[1].str() };
+}
+```
     
