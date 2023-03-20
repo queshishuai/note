@@ -83,4 +83,25 @@ ShaderSource ParseShader(const std::string& filePath)
 ```
    
 - index buffer  
-- 
+- glGetErr()  
+```
+#define ASSERT(x) if(!x) __debugbreak()
+#define GLCall(x) GLClearError();\
+    x;\
+    ASSERT(GLLogErr(#x,__LINE__,__FILE__))
+
+static void GLClearError()
+{
+    while (GL_NO_ERROR != glGetError());
+}
+static GLboolean GLLogErr()
+{
+    while (GLenum err = glGetError())
+    {
+        std::cout << "err code" << err << std::endl;
+        return false;
+    }
+    return true;
+}
+```  
+
