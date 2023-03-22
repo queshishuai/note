@@ -104,4 +104,11 @@ static GLboolean GLLogErr()
     return true;
 }
 ```  
-
+- uniform  
+```
+   GLCall(GLuint location = glGetUniformLocation(shader, "u_Color"));
+    ASSERT(location == -1);
+    GLCall(glUniform4f(location,1.0f,0.5f,0.5f,0.3f));
+ ```
+ - vertex array  
+ - 
