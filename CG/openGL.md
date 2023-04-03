@@ -111,4 +111,9 @@ static GLboolean GLLogErr()
     GLCall(glUniform4f(location,1.0f,0.5f,0.5f,0.3f));
  ```
  - vertex array  
- - 
+
+- blending
+```
+glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+glEnable(GL_BLEND);
+```
