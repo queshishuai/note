@@ -42,4 +42,10 @@ ret 0
 - 保存函数结束时的返回地址  
 - bp base pointer 调用者保存  
 - LR link register，arm的返回地址  
+
+- 指针，最基本的概念
+- lea load effective address
+- EAX-EDX 数据寄存器
+- 全局变量，
+- /MD 命令，将编译的可执行文件将把标准函数链接到MSCVCR*。DLL
 - 
