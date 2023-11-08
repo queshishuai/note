@@ -49,3 +49,25 @@ ret 0
 - 全局变量，
 - /MD 命令，将编译的可执行文件将把标准函数链接到MSCVCR*。DLL
 - 
+
+#### 条件运算符  
+---
+- 三目表达式
+- CMOVcc
+- arm64，CSEL，conditional SELect
+- 优化，尽可能避免条件转移指令
+- 无分支指令的编译方法
+  - ARM，MOVcc
+  - ARM64,CSEL
+  - X86,CMOVcc
+
+#### switch/case  
+---  
+- case少
+- case多
+- 符号标签，symbol label
+- 转移表，jumptable，branchtable
+- 类似指针数组
+- 多对一，索引表
+- fall-through，没有条件转移就行了
+- 
