@@ -48,7 +48,9 @@ ret 0
 - EAX-EDX 数据寄存器
 - 全局变量，
 - /MD 命令，将编译的可执行文件将把标准函数链接到MSCVCR*。DLL
-- 
+- MSVC未开启优化，传参被压到栈里，而不是寄存器中  
+- 阴影空间  
+- GCC，只有寄存器不够用时  
 
 #### 条件运算符  
 ---
@@ -70,4 +72,54 @@ ret 0
 - 类似指针数组
 - 多对一，索引表
 - fall-through，没有条件转移就行了
+- 
+#### 参数获取  
+---
+#### 返回值  
+---  
+- x86，EAX返回运算结果，
+	- char，返回低8位，AL  
+	- float，FPU的ST(0)
+- arm R0  
+- 返回结构体，caller创建数据结构，分配数据空间，把指针作为第一个参数传给callee  
+
+#### 指针  
+---
+#### GOTO  
+---
+```
+	goto exit;
+...
+exit:
+...
+```  
+- jmp指令  
+- dead code  
+
+#### 条件转移指令  
+---
+- signed，检查借位/进位标志CF和零标志位ZF  
+    - JLE jump if less or Equal  
+    - JGE jump if Greater or Equal  
+- unsigned，检查SF XOR OF和ZF  
+    - JBE jump if below or equal
+    - JAE jump if abobe or equal  
+- ADD，addal，always  
+- 条件字段，al，忽略condition field  
+- ADR，寻址，ADRGT  
+- B指令，BLE，BNE，BGE，BLS，BCS
+- BL指令，  
+- LDMFD load multiple full descending  
+- -HI unsigned higher  
+- -CS carry set  
+- ***ARM模式的程序可以完全不依赖条件转移指令，pipeline技术，处理器跳转指令的性能不优越，性能决定于分支预测器branch predictor unites***  
+- RS reverse subtract
+
+#### 循环  
+---
+- 初始态、循环条件、循环控制、循环体  
+- 优化，循环变量直接变成寄存器  
+- 迭代次数较少，或者展开  
+- EBX  
+- ESI  
 - 
