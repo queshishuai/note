@@ -125,3 +125,27 @@ exit:
 -  利用数据栈保存/恢复专用寄存器值，函数序言和尾部声明部分  
 - SIMD，矢量化技术
 - 
+- MOVSX，mov signed externd  
+- ARM最初32RISC  
+- 延迟索引寻址，Post-index address  
+- SLL，shift left logical  
+- SHR，shift right
+- 
+#### FPU  
+---
+- IEEE 754  
+- 8个***80***位寄存器构成的循环栈  
+- ST（0）-ST（7）  
+- Stack Top  
+- ARM，x86的SIMD，是一组寄存器组  
+- ST(0)保存浮点计数结果  
+- 立即数，64位IEEE754  
+- 行业标准VFP，vector Floating Point  
+- ARM有32个64位D子头的寄存器，double float  
+- ARM有32个32位S子头的寄存器，single float  
+- `VMOV D17,R0,R1`2个32位组成64  
+- FLD和FSTP  
+- PF,parity flag  
+- AX ,AH，FPU的状态寄存器，C0-C3  
+- 栈、计算器及逆波兰表示法  
+- 
