@@ -1,4 +1,4 @@
-### RE-Dennis Yurichev
+## RE-Dennis Yurichev，2017
 -2023年11月1日17:12:13
 ---
 
@@ -20,7 +20,7 @@
 
 
 
-#### 函数序言  
+### 函数序言  
 
 ---
 
@@ -37,7 +37,7 @@ ret 0
 ```
 - 所有递归函数的性能都不理想  
 
-#### 栈  
+### 栈  
 ---
 - 保存函数结束时的返回地址  
 - bp base pointer 调用者保存  
@@ -52,7 +52,7 @@ ret 0
 - 阴影空间  
 - GCC，只有寄存器不够用时  
 
-#### 条件运算符  
+### 条件运算符  
 ---
 - 三目表达式
 - CMOVcc
@@ -63,7 +63,7 @@ ret 0
   - ARM64,CSEL
   - X86,CMOVcc
 
-#### switch/case  
+### switch/case  
 ---  
 - case少
 - case多
@@ -73,9 +73,9 @@ ret 0
 - 多对一，索引表
 - fall-through，没有条件转移就行了
 - 
-#### 参数获取  
+### 参数获取  
 ---
-#### 返回值  
+### 返回值  
 ---  
 - x86，EAX返回运算结果，
 	- char，返回低8位，AL  
@@ -83,9 +83,9 @@ ret 0
 - arm R0  
 - 返回结构体，caller创建数据结构，分配数据空间，把指针作为第一个参数传给callee  
 
-#### 指针  
+### 指针  
 ---
-#### GOTO  
+### GOTO  
 ---
 ```
 	goto exit;
@@ -96,7 +96,7 @@ exit:
 - jmp指令  
 - dead code  
 
-#### 条件转移指令  
+### 条件转移指令  
 ---
 - signed，检查借位/进位标志CF和零标志位ZF  
     - JLE jump if less or Equal  
@@ -113,9 +113,9 @@ exit:
 - -HI unsigned higher  
 - -CS carry set  
 - ***ARM模式的程序可以完全不依赖条件转移指令，pipeline技术，处理器跳转指令的性能不优越，性能决定于分支预测器branch predictor unites***  
-- RS reverse subtract
+- RS reverse subtract，逆向减法  
 
-#### 循环  
+### 循环  
 ---
 - 初始态、循环条件、循环控制、循环体  
 - 优化，循环变量直接变成寄存器  
@@ -131,7 +131,7 @@ exit:
 - SLL，shift left logical  
 - SHR，shift right
 - 
-#### FPU  
+### FPU  
 ---
 - IEEE 754  
 - 8个***80***位寄存器构成的循环栈  
@@ -143,9 +143,21 @@ exit:
 - 行业标准VFP，vector Floating Point  
 - ARM有32个64位D子头的寄存器，double float  
 - ARM有32个32位S子头的寄存器，single float  
-- `VMOV D17,R0,R1`2个32位组成64  
+- `VMOV D17,R0,R1`2个32位组成64
+- 
 - FLD和FSTP  
 - PF,parity flag  
 - AX ,AH，FPU的状态寄存器，C0-C3  
 - 栈、计算器及逆波兰表示法  
 - 
+### 数组  
+---
+- 循环优化，将补偿用寄存器表示，避免乘法
+- 缓冲区溢出
+- canary百灵鸟，函数启动时构造一些本地变量，在里面写入随机数，函数结束检查这些值是否变化
+- __stack_chk_fail  
+- gs寄存器
+- 数组一处保护，asssertions
+- 行优先，c/c++,python
+- 列优先，Fortran，Matlab，R  .
+- 数组访问就是计算地址
