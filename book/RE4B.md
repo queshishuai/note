@@ -161,3 +161,32 @@ exit:
 - 行优先，c/c++,python
 - 列优先，Fortran，Matlab，R  .
 - 数组访问就是计算地址
+
+### 位操作  
+---
+- 数据处理指令  
+- x86,SHR/SHL，SAR/SHL  
+- arm,LSR/LSL,ASL/LSL  
+- TEST，只置标志位，不改变结果
+
+- AND，结果保存到目标操作数中  
+
+- regparm=3，设置传参的寄存器数量  
+
+- BIC，反码逻辑与  
+
+- ORR，逻辑或  
+
+- 位移<< >>  
+- FPU的IEEE754格式，S-sign
+  | S       | exponent | mantissa or fraction |
+  | ------- | -------- | -------------------- |
+  | 31:31,1 | 30:23,8  | 22:0,23              |
+  |         |          |                      |
+
+- XMM0寄存器  
+- BTR重置，BTS置位，BTC翻转  
+- FMRS用于在GPR和FPU交换数据  
+- population count/点数函数  
+- 
+
