@@ -181,12 +181,34 @@ exit:
 - FPU的IEEE754格式，S-sign
   | S       | exponent | mantissa or fraction |
   | ------- | -------- | -------------------- |
-  | 31:31,1 | 30:23,8  | 22:0,23              |
-  |         |          |                      |
+  | 31,1    | 30:23,8  | 22:0,23              |
+  | 符号     | 指数     | 小数                  |
 
 - XMM0寄存器  
 - BTR重置，BTS置位，BTC翻转  
 - FMRS用于在GPR和FPU交换数据  
 - population count/点数函数  
+- 
+
+### 线性同余法与伪随机函数  
+---
+- 线性同余法
+```
+static rand = init;
+rand *= 1664525  
+rand += 1013904223
+rand = rand &0x7ffff  
+```
+- 梅森旋转法，Mersenne twister  
+- 重定向，编译->linker  
+
+### 结构体  
+---
+- 异构容器  
+-** 不启动优化，编译器一般以结构体声明变量的次序，在栈内分配空间**  
+- 指定结构体对齐标准/Zp,#pragma pack  
+- 位域  
+- [esi + 4]  
+- 结构体构建浮点数  
 - 
 
