@@ -210,5 +210,63 @@ rand = rand &0x7ffff
 - 位域  
 - [esi + 4]  
 - 结构体构建浮点数  
+- union，构建浮点伪随机数  
+- 快速平方根计算  
+
+- 32为系统用EDX：EAX来回传64位值  
+
+### SIMD  
+---
+- 专用模块实现，
+- simd，8个64为寄存器MM0-MM7  
+- sse，128位  
+- avx，256  
+- DES，data encryption standard  
+- 矢量化  
+
+### 64位平台  
+---
+- R开头  
+- 多8个GPR， 
+- RAX、RBX、RCX、RDX、
+- RBP、RSP、
+- RSI、RDI、
+- R8-R15   
+- x86有16个simd，xmm0-15，x64有32个  
+- fastcall规范传参,RCX,RDX,R8,R9传前4个参数，其他栈  
+- x64在外部RAM的寻址能力是48位  
+- 函数间传递浮点参数xmm0-xmm3  
+- -SS，Scalar Single标量，表明寄存器里只有一个值，单精度  
+- packed  
+- sse用的64位浮点，fpu用的80位  
+
+### ARM指令详解  
+---
+- 立即数（常量），#开头  
+- 变址寻址，`ldr x0,[x29,24]`地址+24  
+    - 后变址寻址，  
+    - 前变址寻址,带！`[sp,#-16]!`  
+- 常量赋值  
+	- movk，move keep  
+- 重定位  
+	- adrp和add传递64位指针地址  
+
+
+## 硬件  
+---
+### 内存布局
+---
+- 全局内存空间  
+- 栈空间  
+- 堆空间  
+
+### CPU  
+---
+- 分支预测，主流编译器不分配条件转移。COMOVcc  
+- OOE/乱序执行指令  
+- LEA，不影响标志位，多使用  
+- 数据相关性  
+- hash函数，生成checksum，  
+- 单向，不可逆  
 - 
 
