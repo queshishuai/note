@@ -269,4 +269,4 @@ rand = rand &0x7ffff
 - hash函数，生成checksum，  
 - 单向，不可逆  
 - 
-
+- ARM不支持硬件除法指令
