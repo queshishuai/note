@@ -350,4 +350,17 @@ rand = rand &0x7ffff
 - LD_PRELOAD，劫持syscall  
 - OEP，original entry point  
 - CRT，C runTime，启动代码  
+- ring0-ring3  
 - 
+### 工具  
+---
+- IDA，interactive disassembler  
+- tracer  
+- strace/dtruss,跟踪系统调用  
+- 加密狗  
+- SAP压缩通信  
+- 信息熵，加密前后信息熵不变  
+- npad，汇编宏，用来把下一个标签的首地址向指定边界对齐  
+- nop  
+- 
+
