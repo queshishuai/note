@@ -322,3 +322,32 @@ rand = rand &0x7ffff
 - 构造魔数调试程序  
 - 内存快照  
 - windows注册表，注册软件，对比注册表  
+
+### 参数传递、调用规范  
+--- 
+- cdel，调用方**逆序**向被调函数传参  
+- stdcall，执行完调用`RET x`还原参数栈  
+- fastcall，优先寄存器，但没有统一的技术规范  
+- watcom，寄存器调用规范，eax,edx,ebx,ecx，头4个寄存器  
+- thiscall  
+- 
+### 线程本地存储TLS  
+---
+- errno  
+- 限定符thread_local  
+- `__DeclSpec(thread)`  
+- `_TLS SEEGMENT`  
+- TIB,thread info block  
+- FS 段  
+- TLS回调  
+
+### 系统调用  
+--- 
+- linux通过80int调用syscall，eax指定被调用的函数编号  
+- 位置无关代码，PIC  
+- GOT，global offset table  
+- PLT，procedure linkage table  
+- LD_PRELOAD，劫持syscall  
+- OEP，original entry point  
+- CRT，C runTime，启动代码  
+- 
