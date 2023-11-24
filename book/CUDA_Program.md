@@ -26,6 +26,47 @@
 - `cudaGetDeviceProperties`  
 - SLI,Scalable link interface  
 - 
+### cuda并行 
+---
+- 尖括号
+	- 第一个，设备在执行核函数时使用的并行线程块的数量  
+    - 第二个，每个线程块启动几个线程
+- 内置变量`blockIdx`
+```
+add<<<N,1>>>(dev_c,dev_a,dev_b);
+__global__ void add(int *a,int *b,int *c)
+{
+	int tid = blockIdx.x;//计算位于这个索引处的数据
+	if(tid < N)
+		c[tid] = a[tid] + b[tid];
+}
+```
+- 线程块block  
+- 线程格Grid，并行线程块的集合  
+- GPU有完善的内存管理机制，  
+- N<=65535,硬件限制  
+- Julia集  
+- `__device__`,在gpu执行，只能从其他device或global调用  
+- `gridDim`,`blockIdx`  
+- 
+### 线程协作  
+---
+- `threadIdx.x`  
+- thread,最大512个  
+- `int tid = threadIdx.x + blockIdx. * blockDim.x`  
+- `tid += blockDim.x * gridim.x`  
+- 喜欢粘贴代码  
+- 炫耀  
+- 
+- 共享内存和同步  
+- `__share__`  
+- 普通内存，线程块创建变量的副本，每个线程共享，其他线程块不可见，驻留在物理GPU上  
+
+- race condition  
+- `__syncthreads();`线程同步函数，除非每个线程块都执行了`__sync`  
+- reduction，规约  
+- thread divergence 线程发散  
+- 
 
 
 
