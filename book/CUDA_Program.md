@@ -67,7 +67,19 @@ __global__ void add(int *a,int *b,int *c)
 - reduction，规约  
 - thread divergence 线程发散  
 - 
-
+### 常量内存  
+---
+- Constant Memory  
+- 全局内存、共享内存、常量内存  
+- `__constant__`  
+- `cudaMemcpyToSymbol();`复制到常量内存  
+- `cudaMemcpy();`复制到全局内存  
+- 64KB  
+- Ray tracing，从摄像头投射光照到物体模型上，二次射线、三次射线  
+- Warp线程束，32个线程的集合  
+- LockStep  
+- 半线程束广播  
+- 
 
 
 
