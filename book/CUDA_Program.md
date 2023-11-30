@@ -81,6 +81,43 @@ __global__ void add(int *a,int *b,int *c)
 - 半线程束广播  
 - 
 
+- cuda事件API  
+- GPU时间戳  
+```
+cudaEvent_t start;
+cudaEventCreate(&start);
+cudaEventRecord(start,0);
+
+cudaEventCreate(&stop);
+cudaEventRecord(start,0);
+/*do sth*/
+cudaEventRecord(stop,0);
+cudaEventSynchronize(stop);
+
+cudaEventElapsedTime();
+cudaEventDestroy();
+```
+- 
+### 纹理内存  
+---
+- 内存访问的空间局部性  
+- `texture<float，2> texConstSrc`  
+- `cudaBindTexture()`  
+- 编译器内置函数，intrinsic  
+- 芯片上的缓存  
+- 
+- 图形互操作性  
+- 原子性  
+- 计算直方图  
+- `atomicAdd(addr,y);`  
+- 共享原子操作和全局原子性  
+- 2阶的算法  
+- 流  
+- 页锁定（page-locked）类型的主机内存，固定内存pinned memory，不可分页内存  
+- 主机内存`dudaHostAlloc()`  
+- 不会分页，不会交换到磁盘，始终驻留在物理内存。  
+- 
+
 
 
 
