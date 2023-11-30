@@ -116,8 +116,14 @@ cudaEventDestroy();
 - 页锁定（page-locked）类型的主机内存，固定内存pinned memory，不可分页内存  
 - 主机内存`dudaHostAlloc()`  
 - 不会分页，不会交换到磁盘，始终驻留在物理内存。  
+- cuda流，GPU操作队列，有序的操作队列  
+- device overlap  
+- `cudaMemcpyAsnc()`  
+- 第一次放入流中的复制操作将在第二次赋值操作之前执行  
+- GPU的工作调度机制  
+- 内存复制和核函数执行采用不同的引擎  
+- 宽度优先而不是深度优先  
 - 
-
 
 
 
