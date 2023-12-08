@@ -124,7 +124,29 @@ cudaEventDestroy();
 - 内存复制和核函数执行采用不同的引擎  
 - 宽度优先而不是深度优先  
 - 
-
+### 多gpu的cuda c  
+---
+- `cudaHostAllocMapped`  
+- 零拷贝，核函数访问cpu内存  
+- MCP，media and communications processor  
+- 集成GPU，独立GPU  
+- SLI桥接  
+- 锁页内存只对单CPU线程是“固定的”  
+- 内存分类  
+    - 可移动内存`cudaHostAllocPortable`  
+    - 零拷贝  
+    - 合并式  
+- 
+- 库  
+- CUFFT  
+- CUBLAS  
+- 加速图像和时频处理，cuda NPP Performance Primitives  
+- 调试工具 
+- cuda-GDB  
+- cuda Memory checker 
+- cuda Parellel Nsight  
+- cuda Visual Profiler  
+- 
 
 
 
