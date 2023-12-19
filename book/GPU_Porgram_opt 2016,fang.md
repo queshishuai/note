@@ -47,7 +47,28 @@
 - mandelbrot  
 - 计算通信重叠优化，多流并发  
 - 前缀求和  
+- thrust库，转置，归约，前缀和，排序，在排序  
 - 
+- 图形处理  
+- 图形直方图统计  
+- 中值滤波，9个格子，取中间  
+- 均值滤波，取平均  
+- 
+### 核心  
+---
+- kernel函数如何在GPU中执行  
+- 功能实现、性能提升  
+- core、DP的算术运算能力、SFU、分支处理、线程切换开销、存储访问、occupancy  
+- <<<blocks,threads>>>,block映射到SM，真正执行又以warp为单位解析指令并分发到core，SP，DP，SFU或访存LD/ST。  
+- 分支处理  
+- 同步，block中的wrap同步  
+- wrap原语，投票和洗牌  
+    - kernel函数内循环  
+    - kernel函数执行线程调度开销  
+    - kernel函数循环启动开销  
+
+- 存储体系
+
 
 
 
