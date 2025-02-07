@@ -64,7 +64,29 @@ trivial；琐碎；
 
 she praised the realism of novels that were being written in Europe at the time;
 
- 
+ a good mouth-filling,easily pronounced word;
+
+a grand favorite of mine;
+
+evolution of the self；
+
+This themes made their way into her first   complete novel;
+
+an instant success;
+
+pseudonym;
+
+polite society;
+
+commission 委托；
+
+Irish home rule;
+
+虽然艾略特本人并不信教，但她尊重宗教传统及其维持社会秩序和道德感的能力。
+
+米德尔马契，英国小说第一名；
+
+作品，现实主义，心理洞察力，对乡村的细致描写。
 
 
 
