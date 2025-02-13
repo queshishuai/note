@@ -10,93 +10,30 @@ The Golden Bough
 
 托里克半岛
 
-boycotts；
+泉水治病
 
-Wales；威尔士
+阿尔特弥斯Artemis：古希腊神话狩猎女神，奥林匹斯12主神之一。丰收女神
 
-The Org made their final public appearance; shortly before the group's dissolution due to political repression after the Act.
+泉水女神
 
-before;介词短语,在something之前，shortly修饰before;翻译的化如果语序颠倒，可以翻为不久之后；
+希波吕托斯
 
-repression;
+人和大自然的生命关系。
 
-介词短语 prepositional phrase;前置的
+一棵山毛榉
 
-near-death experience；
+原始人认为超自然主宰世界，掌握这种力量的神具有人性，所以相信神可以被贿赂，这是祈祷的原因。
 
----
+关于自然法则的现代思想的萌芽，是什么？
 
-2025年2月12日
+交感巫术
 
-Northern Bank robbery
+巫术建立：相似定律，传染（接触）定律
 
-分词短语,having taken
+相似：通过模仿来实现任何想做的事情。
 
-宾语+宾语补足语take sb. hostage;
+接触：通过一个与人接触的东西来影响人。
 
-Having taken family members of two bank officials hostage, 
+理论巫术和应用巫术。
 
-Throughout 2005；2005全年
-
-The police forces in Northern Ireland made arrests and carried out horse searches.
-
-a sum of $1000,一笔
-
-impound；扣押，没收
-
-at the house of 在sb.家中
-
-resign;辞职
-
-quash；撤销
-
-retrial；重新定罪
-
-alongside；介词，和 sth. 一起，伴随
-
-adversely affected;不利地，有害，相反地；副词
-
-adverb；
-
-although;从属连词；
-
-sb. were convicted of crimes uncovered during the investigation;
-
-​	of crimes 介词短语；
-
-​	uncovered 过去分词短语修饰crimes；
-
-​	during the inves；介词短语；
-
-It was then owned by sb. then当时；
-
-On the night of Sunday 19 December 2004,
-
-disguise;伪装
-
-headquarters；总部
-
-crate；纸箱
-
-to be drawn 被牵扯；
-
-the police initially refused to be drawn as to who might be involved;
-
-as to 介词；关于；
-
-宾语从句：who might be involved；
-
-although，虽然，但是
-
-interim report 临时，过渡的
-
-to do with 谓语动词短语，与...有关
-
-介词短语 than with
-
-This is more to do with halting the process of change which Sinn Féin has been driving forward than with anything that happened at the Northern Bank。
-
-
-
-
-
+积极是法术，消极是禁忌
