@@ -45,3 +45,5 @@ struct has_hello_func<T, std::void_t<decltype(std::declval<T>().hello())>>
 ```
 
 3、SFINAE 重载的函数模板匹配，编译过程找最佳匹配。
+4、operator T() const; 类型转换函数
+
